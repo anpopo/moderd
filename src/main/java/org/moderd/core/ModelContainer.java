@@ -3,14 +3,11 @@ package org.moderd.core;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * bean
- */
-public class ModelContainer {
+public final class ModelContainer {
 
-    private final List<Class<?>> classesWithModelAnnotation;
+    private List<Class<?>> classesWithModelAnnotation;
 
-    public ModelContainer(List<Class<?>> classesWithModelAnnotation) {
+    ModelContainer(List<Class<?>> classesWithModelAnnotation) {
         this.classesWithModelAnnotation = Collections.unmodifiableList(classesWithModelAnnotation);
     }
 

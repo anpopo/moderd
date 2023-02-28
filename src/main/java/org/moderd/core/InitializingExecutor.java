@@ -5,13 +5,12 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.logging.Logger;
 
-public class InitializingExecutor {
+public final class InitializingExecutor {
 
     private static final Logger log = Logger.getLogger("org.moderd.core.InitializingExecutor");
-
     private ModelContainer modelContainer;
 
-    public InitializingExecutor(final String basePackage) {
+    private InitializingExecutor(final String basePackage) {
         this.executeLoadAllClasses(basePackage);
     }
 
@@ -24,7 +23,12 @@ public class InitializingExecutor {
         }
     }
 
-    public ModelContainer getModelContainer() {
+    public static ModelContainer execute(final String basePackage) {
+        InitializingExecutor initializingExecutor = new InitializingExecutor(basePackage);
+        return initializingExecutor.getModelContainer();
+    }
+
+    private ModelContainer getModelContainer() {
         return modelContainer;
     }
 }

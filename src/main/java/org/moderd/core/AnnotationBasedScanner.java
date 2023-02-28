@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 import java.util.stream.Stream;
 import org.moderd.core.annotation.Model;
 
-public class AnnotationBasedScanner {
+public final class AnnotationBasedScanner {
 
     private static final Logger log = Logger.getLogger("org.moderd.core.AnnotationBasedScanner");
 
